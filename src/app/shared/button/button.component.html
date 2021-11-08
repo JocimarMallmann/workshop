@@ -1,0 +1,35 @@
+<button [type]="button?.type ? button.type : 'button'"
+  *ngIf="button?.labelButton && button?.route"
+  mat-flat-button
+  [color]="button?.color"
+  [routerLink]="[button?.route]"
+  (click)="onClickEvent()">
+
+  <mat-icon *ngIf="button?.buttonIconLeft">{{ button?.buttonIconLeft }}</mat-icon>
+  <span class="mat-body-strong" [ngClass]="{
+    'ml-2': button?.buttonIconLeft,
+    'mr-2': button?.buttonIconRight
+    }">
+    {{ button?.labelButton }}
+  </span>
+  <mat-icon *ngIf="button?.buttonIconRight">{{ button?.buttonIconRight }}</mat-icon>
+
+</button>
+
+<!-- Botão sem rota -->
+<button [type]="button?.type ? button.type : 'button'"
+  *ngIf="button?.labelButton && !button?.route"
+  mat-flat-button
+  [color]="button?.color"
+  (click)="onClickEvent()">
+
+  <mat-icon *ngIf="button?.buttonIconLeft">{{ button?.buttonIconLeft }}</mat-icon>
+  <span class="mat-body-strong" [ngClass]="{
+    'ml-2': button?.buttonIconLeft,
+    'mr-2': button?.buttonIconRight
+    }">
+    {{ button?.labelButton }}
+  </span>
+  <mat-icon *ngIf="button?.buttonIconRight">{{ button?.buttonIconRight }}</mat-icon>
+
+</button>

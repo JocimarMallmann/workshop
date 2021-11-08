@@ -1,0 +1,24 @@
+<app-toolbar>
+
+  <div class="items-toolbar-left">
+    <button mat-button [routerLink]="['/posts']">Posts</button>
+    <button mat-button >Button 2</button>
+  </div>
+
+  <div class="items-toolbar-right">
+    <i class="fas fa-bars"></i>
+    <button mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+  </div>
+
+</app-toolbar>
+<div class="container">
+  <router-outlet></router-outlet>
+
+  <app-button [button]="button1"
+    (onClick)="btn()">
+  </app-button>
+  <app-button [button]="button2">
+  </app-button>
+</div>

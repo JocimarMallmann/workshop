@@ -24,8 +24,8 @@ export class PostsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  btn() {
-    alert('Botão 1')
+  btn(event: any) {
+    alert('oi ' + event)
   }
 
 }
